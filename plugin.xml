@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) Isaac Lewis.
+ Licensed under The MIT License. See LICENSE.md for details.
+-->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+           id="cordova-plugin-shellexec-windows"
+      version="0.0.10">
+    <name>ShellExec Plugin</name>
+
+    <description>Windows ShellExec for Apache Cordova</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, shellexec, exec, windows</keywords>
+    <repo>https://github.com/ike/cordova-plugin-shellexec-windows/</repo>
+    <issue>https://github.com/ike/cordova-plugin-shellexec-windows/issues</issue>
+
+    <platform name="windows">
+        <js-module src="www/ShellExec.js" name="ShellExec">
+            <merges target="window" />
+        </js-module>
+        <js-module src="www/windows/Database.js" name="Database" />
+        <js-module src="www/windows/SqlTransaction.js" name="SqlTransaction" />
+
+        <framework src="src/windows/SQLite.Proxy/SQLite.Proxy.csproj"
+            custom="true" type="projectReference" target="all" />
+
+        <js-module src="src/windows/WebSqlProxy.js" name="WebSqlProxy">
+            <runs />
+        </js-module>
+    </platform>
+</plugin>
